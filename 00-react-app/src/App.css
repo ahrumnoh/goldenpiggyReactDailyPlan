@@ -4,15 +4,10 @@
   padding: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  background-color: rgb(0, 0, 0);
+  background-image: url("../src/images/brett-ritchie-1vKTnwLMdqs-unsplash.jpg");
+
 }
 
-div{
-  background-color: none;
-}
-body {
-  background-color: whitesmoke;
-}
 
 .bucket-app {
   display: flex;
@@ -25,11 +20,12 @@ body {
   margin: 32px auto;
   border-radius: 20px;
   padding-bottom: 32px;
+  background-image: url("../src/images/istockphoto-683148894-612x612.jpg");
 }
 
 h1 {
   margin: 32px 0;
-  color: #fff;
+  color: rgb(255, 251, 2);
   font-size: 24px;
 }
 
@@ -146,21 +142,24 @@ h3 {
 /* Dropdown menu */
 
 /* Dropdown Button */
-.dropbtn {
+button.dropbtn {
   background-color: #ec5700;
   border-radius: 4px;
+  border-color: rgb(243, 247, 239);
+  border-style: solid;
   width: 75px;
-  color: white;
+  color: rgb(32, 210, 255);
   padding: 16px;
   margin: 10px;
-  /* font-size: 16px; */
-  border: none;
+  font-size: 14px;
+  /* border: none; */
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
+  border-color: rgb(243, 247, 239);
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -173,6 +172,7 @@ h3 {
   padding: 16px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+ 
 }
 
 /* Links inside the dropdown */
@@ -191,9 +191,27 @@ h3 {
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  background-color: cadetblue;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #5d0cff;
+}
+
+
+p {
+  color:burlywood;
+}
+
+a#BTN.goldenpiggyEnter {
+  color:rgb(255, 33, 25);
+  background-color: burlywood;
+  height: 370px;
+  width: 800px;
+  font-size: 15px;;
+  border-style: solid;
+  border-color: blanchedalmond;
+  border-radius: 10px 10px 10px 10px;
+  text-decoration: none;
 }

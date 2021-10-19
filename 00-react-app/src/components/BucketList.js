@@ -58,15 +58,36 @@ function BucketList() {
   return (
     <div>
       <h1>📺 Daily Plan for Trading</h1>
+      <p>Welcome to Goldenpiggy Crypto</p>
+      <p><br></br></p>
+      
+      
+
+
       <BucketForm onSubmit={addBucketItem} />
       <Bucket
         bucket={bucket}
         completeBucketItem={completeBucketItem}
         removeBucketItem={removeBucketItem}
         editBucketItem={editBucketItem}
+        
       ></Bucket>
+      <p><br></br></p>
+
+
+     
+
+     <a class="goldenpiggyEnter" a href="https://goldenpiggy.herokuapp.com/" id="BTN">Enter Goldenpiggy 🚀</a>
+     
+  
+   
+     
+     <p><br></br><br></br></p>
     </div>
   );
 }
+
+
+
 
 export default BucketList;
