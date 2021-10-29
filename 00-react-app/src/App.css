@@ -110,8 +110,8 @@ h3 {
 .Soso {
   background: linear-gradient(
     90deg,
-    rgb(7, 233, 101) 0%,
-    rgb(8, 238, 131) 100%
+    rgb(214, 72, 6) 0%,
+    rgb(2, 216, 130) 100%
   );
 }
 
@@ -170,7 +170,7 @@ button.dropbtn {
   min-width: 215px;
   border-radius: 4px;
   padding: 16px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(189, 233, 32, 0.2);
   z-index: 1;
  
 }
@@ -207,11 +207,14 @@ p {
 a#BTN.goldenpiggyEnter {
   color:rgb(255, 33, 25);
   background-color: burlywood;
-  height: 370px;
-  width: 800px;
-  font-size: 15px;;
   border-style: solid;
+  border-top: 3cm;
+  border-right: 3cm;
   border-color: blanchedalmond;
   border-radius: 10px 10px 10px 10px;
   text-decoration: none;
+}
+
+a#BTN.goldenpiggyEnter:hover {
+ background-color: #149dff77;
 }
