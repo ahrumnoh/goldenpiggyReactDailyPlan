@@ -16,14 +16,14 @@ const Footer = () => {
           </button>
         )}
         <h4>
-          Made with{' '}
+          Crypto World{' '}
           <span
             className="emoji"
             role="img"
             aria-label="heart"
             aria-hidden="false"
           >
-            ❤️
+            
           </span>{' '}
           by goldenpiggy
         </h4>

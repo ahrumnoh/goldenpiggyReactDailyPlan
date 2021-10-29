@@ -65,7 +65,7 @@ const ThoughtForm = () => {
       <h7>NEWS FEED</h7>
       
       
-      <h3>Hello World! What happened NOW?🌎</h3>
+      <h3>Hello Cryptraders! What happened NOW? 🌎</h3>
 
       {Auth.loggedIn() ? (
         <>

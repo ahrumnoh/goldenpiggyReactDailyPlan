@@ -38,7 +38,7 @@ const SingleThought = () => {
             fontSize: '1.5rem',
             fontStyle: 'italic',
             border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
+            lineHeight: '2',
           }}
         >
           {thought.thoughtText}
