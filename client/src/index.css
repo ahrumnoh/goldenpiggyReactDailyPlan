@@ -45,14 +45,21 @@ p.m-0 {
 
 h3{
   color:rgb(254, 255, 249);
+  padding-bottom: 3%;
+  padding-top: 2%;
 }
 p{
   color:rgb(230, 221, 221);
 }
 
+h4 {
+  color:grey;
+}
+
 h7 {
   color:lawngreen;
   font-size: 12px;  
+  padding-bottom: 2%;
 }
 
 /* Grouping content

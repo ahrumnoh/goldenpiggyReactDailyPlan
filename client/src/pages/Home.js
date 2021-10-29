@@ -23,9 +23,10 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
+            
             <ThoughtList
               thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
+              title="Global Financial NEWS" 
             />
           )}
         </div>

@@ -17,7 +17,7 @@ const ThoughtList = ({
       {thoughts &&
         thoughts.map((thought) => (
           <div key={thought._id} className="card mb-3">
-            <h4 className="card-header bg-danger text-white p-2 m-0">
+            <h4 className="card-header bg-dark text-white p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
