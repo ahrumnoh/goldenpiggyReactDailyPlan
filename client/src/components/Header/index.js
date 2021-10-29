@@ -9,7 +9,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <header className="bg-dark text-white mb-4 py-3 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
@@ -21,7 +21,13 @@ const Header = () => {
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" to="/me">
-                Crypto Trader : {Auth.getProfile().data.username} 
+                {Auth.getProfile().data.username}'s profile
+              </Link>
+              <Link className="btn btn-lg btn-info m-2" href="/me">
+                Crypto Blog
+              </Link>
+              <Link className="btn btn-lg btn-info m-2" to="/me">
+                Live Chat
               </Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
