@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+});   //necessary for heroku deployment
 
 db.once('open', () => {
   app.listen(PORT, () => {
