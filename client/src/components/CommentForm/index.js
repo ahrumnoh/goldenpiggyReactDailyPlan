@@ -78,7 +78,7 @@ const CommentForm = ({ thoughtId }) => {
       ) : (
         <p>
           You need to be logged in to share Crypto NEWS to make better world {' '}
-          <Link to="/login">Login</Link> or <Link to="/signup">Signup</Link>
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
     </div>

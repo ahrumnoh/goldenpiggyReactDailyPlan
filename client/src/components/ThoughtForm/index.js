@@ -54,7 +54,7 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
+    if (name === 'thoughtText' && value.length <= 200) {
       setThoughtText(value);
       setCharacterCount(value.length);
     }

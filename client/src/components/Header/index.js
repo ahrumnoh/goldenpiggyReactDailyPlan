@@ -23,15 +23,16 @@ const Header = () => {
               <Link className="btn btn-lg btn-primary m-2" to="/me">
                 {Auth.getProfile().data.username}'s Dashboard
               </Link>
-              <Link className="btn btn-lg btn-danger m-2" href="/me">
-                Crypto Blog
-              </Link>
-              <Link className="btn btn-lg btn-info m-2" to="/me">
-                Live Chat
-              </Link>
+              <button className="btn btn-lg btn-light m-2">
+                <a href="https://goldenpiggy.herokuapp.com/">Crypto Blog</a></button>
+
+              <button className="btn btn-lg btn-light m-2">
+                <a href="https://ahrumnoh.github.io/goldenpiggychat/">Live Chat</a></button>  
+
               <button className="btn btn-lg btn-primary m-2" onClick={logout}>
                 Logout
-              </button>
+              </button>          
+              
             </>
           ) : (
             <>
@@ -41,12 +42,15 @@ const Header = () => {
               <Link className="btn btn-lg btn-danger m-2" to="/signup">
                 Signup
               </Link>
+            
             </>
           )}
+          
         </div>
       </div>
     </header>
   );
 };
+
 
 export default Header;
