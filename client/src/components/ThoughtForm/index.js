@@ -38,10 +38,11 @@ const ThoughtForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addThought({
+      const { data } = await addThought({ //eslint-disable-line no-unused-vars 
         variables: {
           thoughtText,
           thoughtAuthor: Auth.getProfile().data.username,
+          
         },
       });
 
@@ -65,7 +66,7 @@ const ThoughtForm = () => {
       <h7>NEWS FEED</h7>
       
       
-      <h3>Hello Cryptraders! What happened NOW? 🌎</h3>
+      <h3>Crypto Traders! What happened NOW? 🌎</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -92,7 +93,7 @@ const ThoughtForm = () => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-lg btn-primary btn-block py-5" type="submit">
                 💬
               </button>
             </div>
@@ -108,9 +109,9 @@ const ThoughtForm = () => {
           You need to be logged in to share NEWS.    
 
           ⛔ There is a strict restriction if you share hazard fake NEWS. You will be faced with serious legal actions.
-          Please{' '}
+          ✨Please{' '}
 
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login">login</Link> or <Link to="/signup">signup</Link>✨
         </p>
         
       )}

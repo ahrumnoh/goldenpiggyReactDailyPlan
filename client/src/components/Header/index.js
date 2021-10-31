@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoGolden from '../../images/Mylogo1.ico';
 
 import Auth from '../../utils/auth';
 
@@ -9,37 +10,42 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-dark text-white mb-4 py-3 flex-row align-center">
+    <header className="header">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <div>
+      <img src={logoGolden} alt="goldenpiggylogo"/>
+        <div>          
           <Link className="text-light" to="/">
             <h1 className="m-0">Golden Piggy Crytpo</h1>
           </Link>
-          <p className="m-0">Let's share Global NEWS & Insight of trading for better future</p>
+          <br></br>
+          <p className="m-0">Global NEWS & Insight of Investment by Crypto Traders</p>
         </div>
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/me">
-                {Auth.getProfile().data.username}'s Dashboard
+              <Link className="btn btn-sm btn-danger m-2" to="/me">
+                {Auth.getProfile().data.username}'s 🏡
               </Link>
-              <button className="btn btn-lg btn-light m-2">
-                <a href="https://goldenpiggy.herokuapp.com/">Crypto Blog</a></button>
+              <button className="btn btn-sm btn-primary m-2">
+                <a href="https://bit.ly/3nQyB4K">📡Crypto Blog</a></button>
 
-              <button className="btn btn-lg btn-light m-2">
-                <a href="https://ahrumnoh.github.io/goldenpiggychat/">Live Chat</a></button>  
+              <button className="btn btn-sm btn-primary m-2">
+                <a href="https://bit.ly/3Byndiq">💎Crypto Search</a></button> 
 
-              <button className="btn btn-lg btn-primary m-2" onClick={logout}>
-                Logout
+              <button className="btn btn-sm btn-primary m-2">
+                <a href="https://bit.ly/3mvWrD7">👋Live Chat</a></button>  
+
+              <button className="btn btn-sm btn-warning m-2" onClick={logout}>
+                🔓Logout
               </button>          
               
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-info m-2" to="/login">
+              <Link className="btn btn-md btn-light m-2" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-danger m-2" to="/signup">
+              <Link className="btn btn-md btn-danger m-2" to="/signup">
                 Signup
               </Link>
             

@@ -16,7 +16,7 @@ const CommentForm = ({ thoughtId }) => {
     event.preventDefault();
 
     try {
-      const { data } = await addComment({
+      const { data } = await addComment({ //eslint-disable-line no-unused-vars
         variables: {
           thoughtId,
           commentText,
@@ -78,7 +78,7 @@ const CommentForm = ({ thoughtId }) => {
       ) : (
         <p>
           You need to be logged in to share Crypto NEWS to make better world {' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          <Link to="/login">🔐login</Link> or <Link to="/signup">💼signup</Link>
         </p>
       )}
     </div>
