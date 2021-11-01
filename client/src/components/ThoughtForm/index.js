@@ -84,7 +84,7 @@ const ThoughtForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="thoughtText"
-                placeholder="Here's a new thought..."
+                placeholder="Share your Global NEWS"
                 value={thoughtText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
@@ -106,15 +106,16 @@ const ThoughtForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share NEWS.    
-
-          ⛔ There is a strict restriction if you share hazard fake NEWS. You will be faced with serious legal actions.
+          You need to 🔐 Log in' to share NEWS.    
+            
           ✨Please{' '}
 
           <Link to="/login">login</Link> or <Link to="/signup">signup</Link>✨
         </p>
         
       )}
+      <p className="p2">⛔ There is a strict legal action if you share Fake NEWS </p>
+      <p className="p3">🔞 No personal opinion or thoughts, No Nudity, No violent contents</p>
       
     </div>
   );

@@ -12,7 +12,7 @@ const Footer = () => {
             className="btn btn-dark mb-3"
             onClick={() => history.goBack()}
           >
-            &larr; Go Back
+            &larr; Back💨
           </button>
         )}
         <h4>
