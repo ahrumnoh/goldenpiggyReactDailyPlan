@@ -19,10 +19,10 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  thoughts: [
+  newss: [ //*news
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'News', //'news'
     },
   ],
 });

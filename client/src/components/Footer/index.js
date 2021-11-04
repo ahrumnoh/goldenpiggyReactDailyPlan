@@ -5,7 +5,7 @@ const Footer = () => {
   const location = useLocation();
   const history = useHistory();
   return (
-    <footer className="w-100 mt-auto bg-secondary p-4">
+    <footer className="w-100 mt-auto p-4">
       <div className="container text-center mb-5">
         {location.pathname !== '/' && (
           <button
@@ -25,7 +25,7 @@ const Footer = () => {
           >
             
           </span>{' '}
-          by goldenpiggy
+          by goldenpiggy 
         </h4>
       </div>
     </footer>
@@ -33,3 +33,7 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+

@@ -1,25 +1,25 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
+const { User, News } = require('../models'); //* News
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('thoughts');
+      return User.find().populate('newss'); //* news
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('thoughts');
+      return User.findOne({ username }).populate('newss'); //*news
     },
-    thoughts: async (parent, { username }) => {
+    newss: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return News.find(params).sort({ createdAt: -1 }); //*News
     },
-    thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
+    news: async (parent, { newsId }) => { //*newsId
+      return News.findOne({ _id: newsId }); //*News
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('thoughts');
+        return User.findOne({ _id: context.user._id }).populate('newss'); //*news
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -48,26 +48,26 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText }, context) => {
+    addNews: async (parent, { newsText }, context) => { //*addNews / newsText
       if (context.user) {
-        const thought = await Thought.create({
-          thoughtText,
-          thoughtAuthor: context.user.username,
+        const news = await News.create({ //*news /News
+          newsText,  //* newsText
+          newsAuthor: context.user.username, //*newsAuthor
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
+          { $addToSet: { newss: news._id } }  //* news: news
         );
 
-        return thought;
+        return news; //* news
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    addComment: async (parent, { thoughtId, commentText }, context) => {
+    addComment: async (parent, { newsId, commentText }, context) => {
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
+        return News.findOneAndUpdate( //*News
+          { _id: newsId }, //newsId
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
@@ -81,26 +81,26 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeThought: async (parent, { thoughtId }, context) => {
+    removeNews: async (parent, { newsId }, context) => {  //*newsId
       if (context.user) {
-        const thought = await Thought.findOneAndDelete({
-          _id: thoughtId,
-          thoughtAuthor: context.user.username,
+        const news = await News.findOneAndDelete({  //* news / News
+          _id: newsId, //* newsId
+          newsAuthor: context.user.username, //*newsAuthor
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { thoughts: thought._id } }
+          { $pull: { newss: news._id } } //*news: news
         );
 
-        return thought;
+        return news; //*news
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeComment: async (parent, { thoughtId, commentId }, context) => {
+    removeComment: async (parent, { newsId, commentId }, context) => { //*newsId
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
+        return News.findOneAndUpdate( //*News
+          { _id: newsId }, //*newsId
           {
             $pull: {
               comments: {

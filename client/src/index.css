@@ -55,21 +55,25 @@ p{
 
 p.p2{
   color: red;
+  background-color: black;
 }
 
 p.p3 {
-  color:rgb(240, 165, 16);
+  color:rgb(253, 2, 2);
+  background-color: black;
 }
+
+h8 {
+  color:lawngreen;
+  font-size: 12px;  
+  padding-bottom: 2%;
+}
+
 
 h4 {
   color:grey;
 }
 
-h7 {
-  color:lawngreen;
-  font-size: 12px;  
-  padding-bottom: 2%;
-}
 
 
 hr {

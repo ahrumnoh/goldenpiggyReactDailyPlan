@@ -11,10 +11,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import SingleThought from './pages/SingleThought';
+import SingleNews from './pages/SingleNews';  //* SingleNews
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -62,15 +63,15 @@ function App() {
             <Route exact path="/profiles/:username">
               <Profile />
             </Route>
-            <Route exact path="/thoughts/:thoughtId">
-              <SingleThought />
+            <Route exact path="/newss/:newsId"> 
+              <SingleNews /> 
             </Route>
-          </div>
+          </div>  
           <Footer />
         </div>
       </Router>
     </ApolloProvider>
   );
-}
+}  //* Line 65, /news/:newsId
 
 export default App;

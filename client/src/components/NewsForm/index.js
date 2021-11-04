@@ -2,35 +2,34 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../../utils/mutations';
-import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
+import { ADD_NEWS } from '../../utils/mutations';  //*THOUGHT -NEWS
+import { QUERY_NEWS} from '../../utils/queries'; //*QUERY_ME was removed
 
 import Auth from '../../utils/auth';
 
-const ThoughtForm = () => {
-  const [thoughtText, setThoughtText] = useState('');
+const NewsForm = () => { //* NewsForm
+  const [newsText, setNewsText] = useState(''); //*newsText, setNewsText
 
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
-    update(cache, { data: { addThought } }) {
+  const [addNews, { error }] = useMutation(ADD_NEWS, { //* ADD_NEWS
+    update(cache, { data: { addNews } }) {  //* addNews
+   
+
+      
+
       try {
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { newss } = cache.readQuery({ query: QUERY_NEWS });  //*QUERY_NEWS
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] },
+          query: QUERY_NEWS, //*QUERY_NEWS
+          data: { newss: [addNews, ...newss] },  //*news:  addNews, ...news
         });
       } catch (e) {
         console.error(e);
       }
 
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
-      });
+
     },
   });
 
@@ -38,15 +37,15 @@ const ThoughtForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addThought({ //eslint-disable-line no-unused-vars 
+      const { data } = await addNews({ //eslint-disable-line no-unused-vars 
         variables: {
-          thoughtText,
-          thoughtAuthor: Auth.getProfile().data.username,
+          newsText,  //*newsText
+          newsAuthor: Auth.getProfile().data.username, //*newsAuthor
           
         },
       });
 
-      setThoughtText('');
+      setNewsText(''); //*setNewsText
     } catch (err) {
       console.error(err);
     }
@@ -55,15 +54,15 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 200) {
-      setThoughtText(value);
+    if (name === 'newsText' && value.length <= 200) {
+      setNewsText(value); //* setNewsText
       setCharacterCount(value.length);
     }
   };
 
   return (
     <div>
-      <h7>NEWS FEED</h7>
+      <h8>NEWS FEED</h8>
       
       
       <h3>Crypto Traders! What happened NOW? 🌎</h3>
@@ -83,9 +82,9 @@ const ThoughtForm = () => {
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="thoughtText"
+                name="newsText"  //* newsText
                 placeholder="Share your Global NEWS"
-                value={thoughtText}
+                value={newsText}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
@@ -121,4 +120,4 @@ const ThoughtForm = () => {
   );
 };
 
-export default ThoughtForm;
+export default NewsForm; //NewsForm

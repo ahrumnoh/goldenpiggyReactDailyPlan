@@ -2,8 +2,8 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import ThoughtForm from '../components/ThoughtForm';
-import ThoughtList from '../components/ThoughtList';
+import NewsForm from '../components/NewsForm';  //*NewsForm  //NewsForm
+import NewsList from '../components/NewsList';  //*NEwsList   //NewsList
 
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
@@ -41,21 +41,21 @@ const Profile = () => {
           Viewing {userParam ? `${user.username}'s` : 'trader'} profile.
         </h2>
 
-        <div className="col-12 col-md-10 mb-5">
-          <ThoughtList
-            thoughts={user.thoughts}
-            title={`${user.username}'s thoughts...`}
+        <div className="col-12 col-md-10 mb-5"> 
+          <NewsList
+            newss={user.newss}
+            title={`${user.username}'s NEWS`}
             showTitle={false}
             showUsername={false}
           />
-        </div>
+        </div> 
         {!userParam && (
           <div
             className="col-12 col-md-10 mb-3 p-3"
             style={{ border: '3px dotted #1a1a1a' }}
           >
-            <ThoughtForm />
-          </div>
+            <NewsForm />
+          </div>  //* <NewsList = news={user.news}   // NewsForm
         )}
       </div>
     </div>

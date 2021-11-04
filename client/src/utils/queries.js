@@ -1,37 +1,45 @@
 import { gql } from '@apollo/client';
 
+
+//* news/ newsText
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
       username
       email
-      thoughts {
+      newss {
         _id
-        thoughtText
+        newsText
         createdAt
       }
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+//* QUERY_NEWS
+//* getNews / news/ newsText/ newsAuthor
+
+export const QUERY_NEWS = gql`
+  query getNews {
+    newss {
       _id
-      thoughtText
-      thoughtAuthor
+      newsText
+      newsAuthor
       createdAt
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+//* QUERY_SINGLE_NEWS
+//* getSingleNews ($newsId) news(newsId: $newsId), newsText, newsAuthor
+
+export const QUERY_SINGLE_NEWS = gql`
+  query getSingleNews($newsId: ID!) {
+    news(newsId: $newsId) {
       _id
-      thoughtText
-      thoughtAuthor
+      newsText
+      newsAuthor
       createdAt
       comments {
         _id
@@ -43,16 +51,19 @@ export const QUERY_SINGLE_THOUGHT = gql`
   }
 `;
 
+
+//*news{ newsText/newsAuthor}
+
 export const QUERY_ME = gql`
   query me {
     me {
       _id
       username
       email
-      thoughts {
+      newss {
         _id
-        thoughtText
-        thoughtAuthor
+        newsText
+        newsAuthor
         createdAt
       }
     }

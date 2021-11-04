@@ -6,7 +6,7 @@ import { ADD_COMMENT } from '../../utils/mutations';
 
 import Auth from '../../utils/auth';
 
-const CommentForm = ({ thoughtId }) => {
+const CommentForm = ({ newsId }) => {  //*thought -news
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -18,7 +18,7 @@ const CommentForm = ({ thoughtId }) => {
     try {
       const { data } = await addComment({ //eslint-disable-line no-unused-vars
         variables: {
-          thoughtId,
+          newsId, //*thought-news
           commentText,
           commentAuthor: Auth.getProfile().data.username,
         },
@@ -86,3 +86,6 @@ const CommentForm = ({ thoughtId }) => {
 };
 
 export default CommentForm;
+
+
+//just in case, remove this!
