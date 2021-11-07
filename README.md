@@ -1,6 +1,6 @@
 ## Welcome to 'Golden Piggy Crypto by AhrumNoh'at USYD
 
-![Readme Generator]()
+![Readme Generator](https://github.com/ahrumnoh/goldenpiggyReactDailyPlan/blob/main/client/src/images/USYD.jpg?raw=true)
 
 
 
@@ -20,19 +20,19 @@
 
  🎇 HomePage Shot
 
-![Homepage]()
+![Homepage](https://github.com/ahrumnoh/goldenpiggyReactDailyPlan/blob/main/client/src/images/Screenshot%20(155).png)
 
 🎇 Login_page Shot
 
-![LogIn]()
+![LogIn](https://github.com/ahrumnoh/goldenpiggyReactDailyPlan/blob/main/client/src/images/Screenshot%20(157).png)
 
-🎇 Post_page shot
+🎇 Sign_In
 
 ![SignIn]()
 
-🎇 Post_page shot
+🎇 Single_Post
 
-![SinglePost]()
+![SinglePost](https://github.com/ahrumnoh/goldenpiggyReactDailyPlan/blob/main/client/src/images/Screenshot%20(158).png?raw=true)
 
 
 
