@@ -17,7 +17,7 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
-  // redirect to personal profile page if username is yours
+
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Redirect to="/me" />;
   }
@@ -55,7 +55,7 @@ const Profile = () => {
             style={{ border: '3px dotted #1a1a1a' }}
           >
             <NewsForm />
-          </div>  //* <NewsList = news={user.news}   // NewsForm
+          </div>  
         )}
       </div>
     </div>

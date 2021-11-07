@@ -1,25 +1,25 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, News } = require('../models'); //* News
+const { User, News } = require('../models'); 
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('newss'); //* news
+      return User.find().populate('newss'); 
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('newss'); //*news
+      return User.findOne({ username }).populate('newss'); 
     },
     newss: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return News.find(params).sort({ createdAt: -1 }); //*News
+      return News.find(params).sort({ createdAt: -1 }); 
     },
-    news: async (parent, { newsId }) => { //*newsId
-      return News.findOne({ _id: newsId }); //*News
+    news: async (parent, { newsId }) => { 
+      return News.findOne({ _id: newsId }); 
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('newss'); //*news
+        return User.findOne({ _id: context.user._id }).populate('newss'); 
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -48,26 +48,26 @@ const resolvers = {
 
       return { token, user };
     },
-    addNews: async (parent, { newsText }, context) => { //*addNews / newsText
+    addNews: async (parent, { newsText }, context) => { 
       if (context.user) {
-        const news = await News.create({ //*news /News
-          newsText,  //* newsText
-          newsAuthor: context.user.username, //*newsAuthor
+        const news = await News.create({ 
+          newsText, 
+          newsAuthor: context.user.username, 
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { newss: news._id } }  //* news: news
+          { $addToSet: { newss: news._id } }  
         );
 
-        return news; //* news
+        return news; 
       }
       throw new AuthenticationError('You need to be logged in!');
     },
     addComment: async (parent, { newsId, commentText }, context) => {
       if (context.user) {
-        return News.findOneAndUpdate( //*News
-          { _id: newsId }, //newsId
+        return News.findOneAndUpdate(
+          { _id: newsId }, 
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
@@ -81,26 +81,26 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeNews: async (parent, { newsId }, context) => {  //*newsId
+    removeNews: async (parent, { newsId }, context) => {  
       if (context.user) {
-        const news = await News.findOneAndDelete({  //* news / News
-          _id: newsId, //* newsId
-          newsAuthor: context.user.username, //*newsAuthor
+        const news = await News.findOneAndDelete({  
+          _id: newsId, 
+          newsAuthor: context.user.username, 
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { newss: news._id } } //*news: news
+          { $pull: { newss: news._id } } 
         );
 
-        return news; //*news
+        return news; 
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    removeComment: async (parent, { newsId, commentId }, context) => { //*newsId
+    removeComment: async (parent, { newsId, commentId }, context) => { 
       if (context.user) {
-        return News.findOneAndUpdate( //*News
-          { _id: newsId }, //*newsId
+        return News.findOneAndUpdate(
+          { _id: newsId }, 
           {
             $pull: {
               comments: {

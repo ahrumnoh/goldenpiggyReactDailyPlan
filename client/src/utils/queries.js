@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 
 
-//* news/ newsText
+
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
@@ -17,8 +17,7 @@ export const QUERY_USER = gql`
   }
 `;
 
-//* QUERY_NEWS
-//* getNews / news/ newsText/ newsAuthor
+
 
 export const QUERY_NEWS = gql`
   query getNews {
@@ -31,8 +30,7 @@ export const QUERY_NEWS = gql`
   }
 `;
 
-//* QUERY_SINGLE_NEWS
-//* getSingleNews ($newsId) news(newsId: $newsId), newsText, newsAuthor
+
 
 export const QUERY_SINGLE_NEWS = gql`
   query getSingleNews($newsId: ID!) {
@@ -52,7 +50,7 @@ export const QUERY_SINGLE_NEWS = gql`
 `;
 
 
-//*news{ newsText/newsAuthor}
+
 
 export const QUERY_ME = gql`
   query me {

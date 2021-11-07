@@ -1,14 +1,14 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import NewsList from '../components/NewsList'; //*NewsList
-import NewsForm from '../components/NewsForm';  //*NewsForm
+import NewsList from '../components/NewsList'; 
+import NewsForm from '../components/NewsForm'; 
 
-import { QUERY_NEWS } from '../utils/queries'; //*QUERY_NEWS
+import { QUERY_NEWS } from '../utils/queries'; 
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_NEWS); //*QUERY_NEWS
-  const newss = data?.newss || []; //* newss
+  const { loading, data } = useQuery(QUERY_NEWS); 
+  const newss = data?.newss || []; 
 
   return (
     <main>
@@ -33,7 +33,7 @@ const Home = () => {
           )}  
         </div>
       </div> 
-    </main> //* <NewsForm> <NewsList>
+    </main> 
   );
 };
 

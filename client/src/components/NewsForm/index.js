@@ -39,13 +39,13 @@ const NewsForm = () => { //* NewsForm
     try {
       const { data } = await addNews({ //eslint-disable-line no-unused-vars 
         variables: {
-          newsText,  //*newsText
-          newsAuthor: Auth.getProfile().data.username, //*newsAuthor
+          newsText,  
+          newsAuthor: Auth.getProfile().data.username, 
           
         },
       });
 
-      setNewsText(''); //*setNewsText
+      setNewsText(''); 
     } catch (err) {
       console.error(err);
     }
@@ -55,7 +55,7 @@ const NewsForm = () => { //* NewsForm
     const { name, value } = event.target;
 
     if (name === 'newsText' && value.length <= 200) {
-      setNewsText(value); //* setNewsText
+      setNewsText(value); 
       setCharacterCount(value.length);
     }
   };
@@ -82,7 +82,7 @@ const NewsForm = () => { //* NewsForm
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="newsText"  //* newsText
+                name="newsText"  
                 placeholder="Share your Global NEWS"
                 value={newsText}
                 className="form-input w-100"
@@ -120,4 +120,4 @@ const NewsForm = () => { //* NewsForm
   );
 };
 
-export default NewsForm; //NewsForm
+export default NewsForm; 

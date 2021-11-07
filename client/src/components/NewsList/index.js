@@ -1,42 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const NewsList = ({  //* NewsList
-  newss, //* newss
+const NewsList = ({ 
+  newss, 
   title,
   showTitle = true,
   showUsername = true,
 }) => {
-  if (!newss.length) { //* newss
+  if (!newss.length) {
     return <h3>No NEWS Yet</h3>;
   }
 
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
-      {newss &&   //*news
-        newss.map((news) => ( //*news
+      {newss &&  
+        newss.map((news) => ( 
 
-             //* news._id
+             
           <div key={news._id} className="card mb-3">   
             <h4 className="card-header bg-dark text-white p-2 m-0">
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${news.newsAuthor}`} //* news.newsAuthor
+                  to={`/profiles/${news.newsAuthor}`} 
                 >
                   {news.newsAuthor} <br /> 
                   
                   <span style={{ fontSize: '1rem' }}>
                     on {news.createdAt}
                   </span> 
-                </Link> //* {news.newsAuthor/ news.createdAt}
+                </Link> 
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
                     on {news.createdAt} 
                   </span> 
-                </>//* {news.createdAt}
+                </>
               )} 
             </h4> 
             <div className="card-body bg-dark text-white p-2">
@@ -50,8 +50,8 @@ const NewsList = ({  //* NewsList
             </Link> 
           </div>
         ))} 
-    </div>  //* {news.newsText}        /news/${news._id}
+    </div>  
   );
 };
 
-export default NewsList; //*NewsList
+export default NewsList; 

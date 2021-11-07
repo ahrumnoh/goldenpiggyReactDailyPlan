@@ -40,6 +40,5 @@ const newsSchema = new Schema({ //newsSchema
   ],
 });
 
-const News = model('News', newsSchema);  //News
- 
-module.exports = News;  //News
+const News = model('News', newsSchema);   
+module.exports = News;  

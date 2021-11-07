@@ -24,8 +24,8 @@ export const ADD_USER = gql`
   }
 `;
 
-//* ADD_NEWS 
-//* addNews/ newsText/ newsAuthor
+
+
 export const ADD_NEWS = gql` 
   mutation addNews($newsText: String!) {
     addNews(newsText: $newsText) {
@@ -41,7 +41,7 @@ export const ADD_NEWS = gql`
   }
 `;
 
-//* newsId/ newsText/ newsAuthor
+
 
 export const ADD_COMMENT = gql`
   mutation addComment($newsId: ID!, $commentText: String!) {

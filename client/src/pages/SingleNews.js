@@ -7,24 +7,24 @@ import { useQuery } from '@apollo/client';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 
-import { QUERY_SINGLE_NEWS } from '../utils/queries';  //*QUERY_SINGLE_NEWS
+import { QUERY_SINGLE_NEWS } from '../utils/queries';  
 
 const SingleNews = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
 
   //* singleNews
-  const { newsId } = useParams();  //*newsId
+  const { newsId } = useParams();  
 
-  const { loading, data } = useQuery(QUERY_SINGLE_NEWS, { //* QUERY_SINGLE_NEWS
+  const { loading, data } = useQuery(QUERY_SINGLE_NEWS, { 
     // pass URL parameter
-    variables: { newsId: newsId }, //*newsId
+    variables: { newsId: newsId }, 
   });
 
-  const news = data?.news || {}; //*news
+  const news = data?.news || {}; 
 
   if (loading) {
     return <div>Loading...</div>;
-  }  //*blow: news.newsAuthor/ news.createdAt
+  } 
   return (
     <div className="my-3"> 
       <h3 className="card-header bg-dark text-light p-2 m-0"> 
@@ -42,7 +42,7 @@ const SingleNews = () => {
             fontStyle: 'italic',
             border: '2px dotted #1a1a1a',
             lineHeight: '2',
-          }}  //* below : news.newsText
+          }}  
         >
           {news.newsText} 
         </blockquote>
@@ -54,8 +54,8 @@ const SingleNews = () => {
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}> 
         <CommentForm newsId={news._id} />
       </div> 
-    </div> //* above {news.comments}  / {news._id}
+    </div> 
   );
 };
 
-export default SingleNews; //*SingleNews
+export default SingleNews; 
