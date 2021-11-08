@@ -6,12 +6,15 @@
 
 ## Overview
 
+For professional crypto-traders, this golden piggy crypto provides social platform that traders can share global NEWS from various perspective, different countries at NEWS page and also their own opinions or insights at blog page. In addition, traders 
+are able to check their Live-Crypto checker & 24/7 Live chat as well. 
+
 
 
 
 ## Golden Piggy official Website link ##
 
- 🐽 Deployed URL: 
+ 🐽 Deployed URL: https://calm-bastion-48518.herokuapp.com/
 
 
 
@@ -41,42 +44,14 @@
 
 ## Installation in VS code
 
-The user should clone the repository from GitHub and Use the schema.sql file in the db folder to create your database with MySQL shell commands
-
-
-
 
 > **⚠ .NPM SETUP.**  
 
-> * $ npm init -y
 > * $ npm install
-> * $ npm install inquirer
-
-> * $ node seeds/index
 
 ## Usage in VS code
 * ✔$ npm run deveop
 * ✔$ npm start
-
-
-
-## 😎 in this project
-
-
-
-## 😊What Dependencies I used?
-
-
-
-
-
-## 😊What new technology I used?
-
-
-
-## 😊additional functions I set ?
-
-
 
 
 ## License 
