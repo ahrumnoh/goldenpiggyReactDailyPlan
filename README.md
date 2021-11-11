@@ -21,17 +21,13 @@ are able to check their Live-Crypto checker & 24/7 Live chat as well.
  ## Final Images 👇
 
 
- 🎇 HomePage Shot
+🎇 HomePage Shot
 
 ![Homepage](https://github.com/ahrumnoh/goldenpiggyReactDailyPlan/blob/main/client/src/images/Screenshot%20(155).png)
 
 🎇 Login_page Shot
 
 ![LogIn](https://github.com/ahrumnoh/goldenpiggyReactDailyPlan/blob/main/client/src/images/Screenshot%20(157).png)
-
-🎇 Sign_In
-
-![SignIn]()
 
 🎇 Single_Post
 
