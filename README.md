@@ -38,18 +38,6 @@ are able to check their Live-Crypto checker & 24/7 Live chat as well.
 
 
 
-## Installation in VS code
-
-
-> **⚠ .NPM SETUP.**  
-
-> * $ npm install
-
-## Usage in VS code
-* ✔$ npm run deveop
-* ✔$ npm start
-
-
 ## License 
 MIT License
 
